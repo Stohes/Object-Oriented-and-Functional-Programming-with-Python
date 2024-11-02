@@ -4,6 +4,7 @@ from datetime import datetime
 
 @dataclass
 class Habit:
+    id: int
     name: str
     periodicity_string: str
     periodicity_int: int
