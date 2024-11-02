@@ -1,4 +1,4 @@
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from datetime import datetime
 
 
@@ -6,11 +6,10 @@ from datetime import datetime
 class Habit:
     name: str
     periodicity_string: str
-    periodicity_int: int
-    created_at: datetime
-    completion_dates: list
-    current_streak: int
-    max_streak: int
+    created_at: datetime = datetime.now()
+    completion_dates: list = field(default_factory=list)
+    current_streak: int = 0
+    max_streak: int = 0
     
     
     def complete_task(self):
@@ -24,7 +23,9 @@ class Habit:
         
         delta = current_date - last_completion
         
-        if delta > self.periodicity_int:
+        periodicity_int = self.get_periodicity_int(self.periodicity_string)
+        
+        if delta > periodicity_int:
             return True
         else:
             return False
@@ -45,3 +46,13 @@ class Habit:
     def reset_streak(self):
         self.max_streak = max(self.current_streak, self.max_streak)
         self.current_streak = 0
+        
+        
+    def get_periodicity_int(self, periodicity_string):
+        periodicity_dictionary = {
+            "daily": 1,
+            "weekly": 7,
+            "monthly": 30,
+        }
+        
+        return periodicity_dictionary[periodicity_string]
