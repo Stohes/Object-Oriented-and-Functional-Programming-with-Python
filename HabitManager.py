@@ -22,7 +22,6 @@ class HabitManager:
         habit = self.find_habit(name)
         self.habits.remove(habit)
         self.save_habits()
-        return  # maybe add confirmation message
             
     
     def list_habits_by_periodicity(self):
@@ -51,7 +50,7 @@ class HabitManager:
         
         habit.complete_task()
         habit.increase_streak()
-        return  # maybe add confirmation message
+        self.save_habits()
     
     
     def find_habit(self, name):
