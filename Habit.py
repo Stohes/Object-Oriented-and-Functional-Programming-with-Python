@@ -32,15 +32,7 @@ class Habit:
             return True
         else:
             return False
-        
-    
-    def get_current_streak(self):
-        return self.current_streak
-    
-    
-    def get_max_streak(self):
-        return self.max_streak
-    
+            
     
     def increase_streak(self):
         self.current_streak += 1
