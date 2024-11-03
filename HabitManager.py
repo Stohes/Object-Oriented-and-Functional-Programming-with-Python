@@ -13,8 +13,9 @@ class HabitManager:
     
     
     def create_habit(self, name, periodicity):
-        pass
-    
+        new_habit = Habit(name, periodicity)
+        self.habits.append(new_habit)
+        
     
     def delete_habit(self, name):
         pass
