@@ -5,7 +5,7 @@ import pickle
 
 @dataclass
 class HabitManager:
-    habits: list = field(default_factory=list)
+    habits: list[Habit] = field(default_factory=list)
     
     
     def __post_init__(self):
@@ -50,7 +50,12 @@ class HabitManager:
     def complete_habit(self, name):
         for habit in self.habits:
             if habit.name == name:
+                
+                if habit.is_broken():
+                    habit.reset_streak()
+                
                 habit.complete_task()
+                habit.increase_streak()
                 return  # maybe add confirmation message
     
     
