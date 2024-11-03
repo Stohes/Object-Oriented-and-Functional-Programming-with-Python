@@ -48,7 +48,10 @@ class HabitManager:
         
 
     def complete_habit(self, name):
-        pass
+        for habit in self.habits:
+            if habit.name == name:
+                habit.complete_task()
+                return  # maybe add confirmation message
     
     
     def save_habits(self):
