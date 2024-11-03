@@ -18,7 +18,10 @@ class HabitManager:
         
     
     def delete_habit(self, name):
-        pass
+        for habit in self.habits:
+            if habit.name == name:
+                del habit
+                return  # maybe add confirmation message
     
     
     def list_habits(self):
