@@ -25,7 +25,8 @@ class HabitManager:
     
     
     def list_habits(self):
-        pass
+        for habit in self.habits:
+            print(habit)
     
     
     def list_habits_by_periodicity(self):
