@@ -44,10 +44,10 @@ class Habit:
     
     def increase_streak(self):
         self.current_streak += 1
+        self.max_streak = max(self.current_streak, self.max_streak)
         
     
     def reset_streak(self):
-        self.max_streak = max(self.current_streak, self.max_streak)
         self.current_streak = 0
         
         
