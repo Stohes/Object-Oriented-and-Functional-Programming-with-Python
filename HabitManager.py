@@ -23,10 +23,9 @@ class HabitManager:
         return  # maybe add confirmation message
     
     
-    def list_habits(self):
-        for habit in self.habits:
-            print(habit)
-    
+    def get_habit_list(self):
+        return self.habits
+            
     
     def list_habits_by_periodicity(self):
         print(self.get_daily_habits())
@@ -64,11 +63,11 @@ class HabitManager:
             
     
     def save_habits(self):
-        with open("data.pkl", "wb") as file:
+        with open("Code/data.pkl", "wb") as file:
             pickle.dump(self.habits, file)
     
     
     def load_habits(self):
-        with open("data.pkl", "rb") as file:
+        with open("Code/data.pkl", "rb") as file:
             self.habits = pickle.load(file)
             
