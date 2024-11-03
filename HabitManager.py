@@ -20,7 +20,7 @@ class HabitManager:
     
     def delete_habit(self, name):
         habit = self.find_habit(name)
-        del habit
+        self.habits.remove(habit)
         return  # maybe add confirmation message
             
     
