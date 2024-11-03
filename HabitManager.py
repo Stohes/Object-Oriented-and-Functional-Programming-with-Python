@@ -18,10 +18,9 @@ class HabitManager:
         
     
     def delete_habit(self, name):
-        for habit in self.habits:
-            if habit.name == name:
-                del habit
-                return  # maybe add confirmation message
+        habit = self.find_habit(name)
+        del habit
+        return  # maybe add confirmation message
     
     
     def list_habits(self):
@@ -48,15 +47,14 @@ class HabitManager:
         
 
     def complete_habit(self, name):
-        for habit in self.habits:
-            if habit.name == name:
-                
-                if habit.is_broken():
-                    habit.reset_streak()
-                
-                habit.complete_task()
-                habit.increase_streak()
-                return  # maybe add confirmation message
+        habit = self.find_habit(name)
+        
+        if habit.is_broken():
+            habit.reset_streak()
+        
+        habit.complete_task()
+        habit.increase_streak()
+        return  # maybe add confirmation message
     
     
     def find_habit(self, name):
