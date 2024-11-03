@@ -30,8 +30,22 @@ class HabitManager:
     
     
     def list_habits_by_periodicity(self):
-        pass
+        print(self.get_daily_habits())
+        print(self.get_weekly_habits())
+        print(self.get_monthly_habits())
+            
+        
+    def get_daily_habits(self):
+        return [habit for habit in self.habits if habit.periodicity_string == "Daily"]
 
+
+    def get_weekly_habits(self):
+        return [habit for habit in self.habits if habit.periodicity_string == "Weekly"]
+
+
+    def get_monthly_habits(self):
+        return [habit for habit in self.habits if habit.periodicity_string == "Monthly"]
+        
 
     def complete_habit(self, name):
         pass
