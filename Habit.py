@@ -18,6 +18,9 @@ class Habit:
         
     
     def is_broken(self):
+        if len(self.completion_dates) == 0:
+            return False
+        
         last_completion = self.completion_dates[-1]
         current_date = datetime.now()
         
