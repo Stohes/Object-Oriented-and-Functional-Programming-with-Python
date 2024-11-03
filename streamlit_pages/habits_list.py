@@ -15,6 +15,6 @@ for habit in habit_list:
         Periodicity: {habit.periodicity_string}
         Current Streak: {habit.current_streak}
         Max Streak: {habit.max_streak}
-        Completion Dates: {habit.completion_dates}
+        Completion Dates: {[date.strftime("%d/%m/%Y") for date in habit.completion_dates]}
         """
     )
