@@ -59,6 +59,12 @@ class HabitManager:
                 return  # maybe add confirmation message
     
     
+    def find_habit(self, name):
+        for habit in self.habits:
+            if habit.name == name:
+                return habit
+            
+    
     def save_habits(self):
         with open("data.pkl", "wb") as file:
             pickle.dump(self.habits, file)
