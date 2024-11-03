@@ -21,10 +21,6 @@ class HabitManager:
         habit = self.find_habit(name)
         del habit
         return  # maybe add confirmation message
-    
-    
-    def get_habit_list(self):
-        return self.habits
             
     
     def list_habits_by_periodicity(self):

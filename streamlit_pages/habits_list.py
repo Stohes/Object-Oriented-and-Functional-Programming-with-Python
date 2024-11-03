@@ -7,7 +7,7 @@ st.title("Habits List")
 
 habitManager = HabitManager()
 
-habit_list = habitManager.get_habit_list()
+habit_list = habitManager.habits
 for habit in habit_list:
     st.code(
     f"""
