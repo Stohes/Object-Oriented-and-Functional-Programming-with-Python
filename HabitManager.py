@@ -21,6 +21,7 @@ class HabitManager:
     def delete_habit(self, name):
         habit = self.find_habit(name)
         self.habits.remove(habit)
+        self.save_habits()
         return  # maybe add confirmation message
             
     
