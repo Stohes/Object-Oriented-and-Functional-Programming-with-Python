@@ -6,12 +6,13 @@ st.title("Complete Habit")
 
 
 habitManager = HabitManager()
-
-with st.form("Complete Habit"):
-    name = st.text_input(label="Name")
-
-    submitted = st.form_submit_button(label="Complete")
+                
+habit_list = habitManager.habits
+for habit in habit_list:
     
-    if submitted:
-        habitManager.complete_habit(name=name)
-        st.write(f"Habit Successfully Completed")
+    habit_name = habit.name
+    complete_button = st.button(label=habit_name)
+    
+    if complete_button:
+        habitManager.complete_habit(habit_name)
+        st.write(f"Habit {habit.name} Successfully Completed")
