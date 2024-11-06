@@ -28,7 +28,7 @@ class Habit:
         
         periodicity_int = self.get_periodicity_int(self.periodicity_string)
         
-        if delta > periodicity_int:
+        if delta.days > periodicity_int:
             return True
         else:
             return False
