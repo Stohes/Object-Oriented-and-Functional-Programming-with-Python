@@ -45,9 +45,9 @@ class Habit:
         
     def get_periodicity_int(self, periodicity_string):
         periodicity_dictionary = {
-            "daily": 1,
-            "weekly": 7,
-            "monthly": 30,
+            "Daily": 1,
+            "Weekly": 7,
+            "Monthly": 30,
         }
         
         return periodicity_dictionary[periodicity_string]
