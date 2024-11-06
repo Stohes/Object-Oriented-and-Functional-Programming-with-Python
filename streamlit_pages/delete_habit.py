@@ -7,11 +7,12 @@ st.title("Delete Habit")
 
 habitManager = HabitManager()
 
-with st.form("Delete Habit"):
-    name = st.text_input(label="Name")
-
-    submitted = st.form_submit_button(label="Delete")
+habit_list = habitManager.habits
+for habit in habit_list:
     
-    if submitted:
-        habitManager.delete_habit(name=name)
-        st.write(f"Habit Successfully Deleted")
+    habit_name = habit.name
+    delete_button = st.button(label=habit_name)
+    
+    if delete_button:
+        habitManager.delete_habit(habit_name)
+        st.rerun()
