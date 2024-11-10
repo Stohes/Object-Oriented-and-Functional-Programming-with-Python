@@ -28,10 +28,7 @@ class Habit:
         
         periodicity_int = self.get_periodicity_int(self.periodicity_string)
         
-        if delta.days > periodicity_int:
-            return True
-        else:
-            return False
+        return delta.days > periodicity_int
             
     
     def increase_streak(self):
