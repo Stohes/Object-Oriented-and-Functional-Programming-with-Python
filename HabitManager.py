@@ -22,18 +22,6 @@ class HabitManager:
         habit = self.find_habit(name)
         self.habits.remove(habit)
         self.save_habits()
-            
-        
-    def get_daily_habits(self):
-        return [habit for habit in self.habits if habit.periodicity_string == "Daily"]
-
-
-    def get_weekly_habits(self):
-        return [habit for habit in self.habits if habit.periodicity_string == "Weekly"]
-
-
-    def get_monthly_habits(self):
-        return [habit for habit in self.habits if habit.periodicity_string == "Monthly"]
         
 
     def complete_habit(self, name):
