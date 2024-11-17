@@ -23,12 +23,6 @@ class HabitManager:
         self.habits.remove(habit)
         self.save_habits()
             
-    
-    def list_habits_by_periodicity(self):
-        print(self.get_daily_habits())
-        print(self.get_weekly_habits())
-        print(self.get_monthly_habits())
-            
         
     def get_daily_habits(self):
         return [habit for habit in self.habits if habit.periodicity_string == "Daily"]
