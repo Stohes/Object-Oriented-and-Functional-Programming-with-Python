@@ -1,6 +1,7 @@
 from dataclasses import dataclass, field
 from Habit import Habit
 import pickle
+import os
 
 
 @dataclass
@@ -42,11 +43,17 @@ class HabitManager:
             
     
     def save_habits(self):
-        with open("Code/data.pkl", "wb") as file:
+        current_directory = os.path.dirname(os.path.abspath(__file__))
+        data_file_path = os.path.join(current_directory, "data.pkl")
+
+        with open(data_file_path, "wb") as file:
             pickle.dump(self.habits, file)
     
     
     def load_habits(self):
-        with open("Code/data.pkl", "rb") as file:
+        current_directory = os.path.dirname(os.path.abspath(__file__))
+        data_file_path = os.path.join(current_directory, "data.pkl")
+        
+        with open(data_file_path, "rb") as file:
             self.habits = pickle.load(file)
             
